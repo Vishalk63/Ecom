@@ -3,14 +3,14 @@ import axios from "axios";
 
 // to fetch all products from api and store them in items 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-    const response = await axios.get('http://localhost:8080/products')
+    const response = await axios.get('https://ecom-56qj.onrender.com/products')
     return response.data
 })
 
 // retruned serached data and store them to items 
 export const searchProducts = createAsyncThunk('products/searchProducts',
     async (keyword) => {
-        const response = await axios.get(`http://localhost:8080/products/search?keyword=${keyword}`)
+        const response = await axios.get(`https://ecom-56qj.onrender.com/products/search?keyword=${keyword}`)
         return response.data
     }
 )
@@ -19,7 +19,7 @@ export const searchProducts = createAsyncThunk('products/searchProducts',
 
 export const searchProductsWithTags = createAsyncThunk('products/searchTags',
     async (searchTag)=>{
-        const response = await axios.get(`http://localhost:8080/products/category?searchTag=${searchTag}`)
+        const response = await axios.get(`https://ecom-56qj.onrender.com/products/category?searchTag=${searchTag}`)
         return response.data
     }
 )
@@ -28,7 +28,7 @@ export const searchProductsWithTags = createAsyncThunk('products/searchTags',
 
 export const sortedProducts = createAsyncThunk('products/SortProducts',
 async ({sortField, sortOrder}) => {
-        const response = await axios.get(`http://localhost:8080/products/sort?sortField=${sortField}&sortOrder=${sortOrder}`)
+        const response = await axios.get(`https://ecom-56qj.onrender.com/products/sort?sortField=${sortField}&sortOrder=${sortOrder}`)
         return response.data
     }
 )

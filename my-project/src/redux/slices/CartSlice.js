@@ -8,7 +8,7 @@ export const fetchCartData = createAsyncThunk('cart/getData',
     async () => {
         const token = localStorage.getItem('token');
         const userId = localStorage.getItem('userId');
-        const response = await axios.get(`http://localhost:8080/cart/all?userId=${userId}`, {
+        const response = await axios.get(`https://ecom-56qj.onrender.com/cart/all?userId=${userId}`, {
             headers: {
                 Authorization: token
             }
@@ -20,7 +20,7 @@ export const fetchCartData = createAsyncThunk('cart/getData',
 export const addToCart = createAsyncThunk('cart/addToCart',
     async (productId,quantity) => {
         const token = localStorage.getItem('token');
-        const response = await axios.post(`http://localhost:8080/cart`, {
+        const response = await axios.post(`https://ecom-56qj.onrender.com/cart`, {
             productId: productId,
             quantity: 1
         }, {

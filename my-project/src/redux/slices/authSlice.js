@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const registerUser = createAsyncThunk('auth/register',
     async (formData) => {
-        const response = await axios.post('http://localhost:8080/user/register',
+        const response = await axios.post('https://ecom-56qj.onrender.com/user/register',
             formData
         )
         return response.data
@@ -13,7 +13,7 @@ export const registerUser = createAsyncThunk('auth/register',
 
 export const loginUser = createAsyncThunk('auth/login',
     async(formData)=>{
-        const response = await axios.post('http://localhost:8080/user/login',formData)
+        const response = await axios.post('https://ecom-56qj.onrender.com/user/login',formData)
         return response.data
     }
 )
